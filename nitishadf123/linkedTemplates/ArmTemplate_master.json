@@ -1,0 +1,189 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "nitishadf123"
+		},
+		"AzureBlobStorage_task1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage_task1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDataLakeStorage_task_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage_task'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureSqlDatabase_src_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_src'"
+		},
+		"AzureSqlDatabase_tgt_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase_tgt'"
+		},
+		"ls_slqserver_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_slqserver'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagefactorynitish.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagefactorynitish.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage_task_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storagefactorynitish.dfs.core.windows.net/"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0619-123324-gxdpzrss"
+		},
+		"AzureSqlDatabase_src_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "nitishserver123.database.windows.net"
+		},
+		"AzureSqlDatabase_src_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "celebaltaskdb_src"
+		},
+		"AzureSqlDatabase_src_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "nitishkumar7091"
+		},
+		"AzureSqlDatabase_tgt_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "nitishserver123.database.windows.net"
+		},
+		"AzureSqlDatabase_tgt_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "celebaltaskdb_tgt"
+		},
+		"AzureSqlDatabase_tgt_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "nitishkumar7091"
+		},
+		"ls_slqserver_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "nitishserver123.database.windows.net"
+		},
+		"ls_slqserver_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "customerdb123"
+		},
+		"ls_slqserver_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "nitishkumar7091"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "nitishadf123_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage_task1_connectionString": {
+						"value": "[parameters('AzureBlobStorage_task1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"AzureDataLakeStorage_task_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage_task_accountKey')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureSqlDatabase_src_password": {
+						"value": "[parameters('AzureSqlDatabase_src_password')]"
+					},
+					"AzureSqlDatabase_tgt_password": {
+						"value": "[parameters('AzureSqlDatabase_tgt_password')]"
+					},
+					"ls_slqserver_password": {
+						"value": "[parameters('ls_slqserver_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage_task_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_task_properties_typeProperties_url')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
+					},
+					"AzureSqlDatabase_src_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_src_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_src_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_src_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_src_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_src_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase_tgt_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase_tgt_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase_tgt_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase_tgt_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase_tgt_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase_tgt_properties_typeProperties_userName')]"
+					},
+					"ls_slqserver_properties_typeProperties_server": {
+						"value": "[parameters('ls_slqserver_properties_typeProperties_server')]"
+					},
+					"ls_slqserver_properties_typeProperties_database": {
+						"value": "[parameters('ls_slqserver_properties_typeProperties_database')]"
+					},
+					"ls_slqserver_properties_typeProperties_userName": {
+						"value": "[parameters('ls_slqserver_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
