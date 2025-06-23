@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlDatabase_tgt",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "nitishserver123.database.windows.net",
+			"database": "celebaltaskdb_tgt",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "nitishkumar7091",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQERBREJENTZBLUJFRTUtNDc1Ny05NkE3LTJBQTlGNjkyN0VDMl8wOWJlZWNjOC04OWUwLTQ4ZTQtYTE0MS0zMzQ3ZjM1YjU2NjgiDQp9"
+		}
+	}
+}
